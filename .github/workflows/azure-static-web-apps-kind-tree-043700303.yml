@@ -21,6 +21,9 @@ jobs:
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        env:
+          GATSBY_GRAPHCMS_ENDPOINT: ${{ secrets.GATSBY_GRAPHCMS_ENDPOINT }}
+          GATSBY_GRAPHCMS_TOKEN: ${{ secrets.GATSBY_GRAPHCMS_TOKEN }}
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_TREE_043700303 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
